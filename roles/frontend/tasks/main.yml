@@ -20,7 +20,7 @@
 
 - name: Copy file to the default location
   ansible.builtin.copy:
-    src: /codefrontend/
+    src: /code/frontend/
     dest: /usr/share/nginx/html
 
 - name: Enabling and restarting nginx service
