@@ -16,7 +16,7 @@
 - name: get the front end code from repo
   ansible.builtin.git:
     repo: https://github.com/roboshop-Project/frontend.git
-    dest: /home/centos
+    dest: /code
 
 - name: Copy file to the default location
   ansible.builtin.copy:
