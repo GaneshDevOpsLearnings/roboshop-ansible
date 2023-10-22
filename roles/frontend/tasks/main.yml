@@ -13,14 +13,9 @@
     path: /usr/share/nginx/html
     state: directory
 
-- name: get the front end code from repo
+- name: get the front end code from repo to the default location
   ansible.builtin.git:
     repo: https://github.com/roboshop-Project/frontend.git
-    dest: /code
-
-- name: Copy file to the default location
-  ansible.builtin.copy:
-    src: /code/frontend/
     dest: /usr/share/nginx/html
 
 - name: Enabling and restarting nginx service
