@@ -1,0 +1,30 @@
+- name: Install nginx
+  ansible.builtin.dnf:
+    name: nginx
+    state: present
+
+- name: remove the default nginx content
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+
+- name: Create HTTP Document Directory
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: directory
+
+- name: get the front end code from repo
+  ansible.builtin.git:
+    repo: https://github.com/roboshop-Project/frontend.git
+    dest: /home/centos
+
+- name: Copy file to the default location
+  ansible.builtin.copy:
+    src: /home/centos/frontend/
+    dest: /usr/share/nginx/html
+
+- name: Enabling and restarting nginx service
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted
+    enabled: yes

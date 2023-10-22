@@ -1,0 +1,5 @@
+- name: Deploying roboshop project using ansible
+  hosts: all
+  become: yes
+  roles:
+   - {{component}}
