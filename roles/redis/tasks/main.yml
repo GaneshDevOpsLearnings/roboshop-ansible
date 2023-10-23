@@ -1,0 +1,15 @@
+- name: Install redis
+  ansible.builtin.dnf:
+    name: 
+      - https://rpms.remirepo.net/enterprise/remi-release-8.rp
+      - redis:remi-6.2 
+      - redis
+    state: present
+
+- name: update the lisiting address
+  ansible.builtin.replace:
+    path: 
+      - /etc/redis.conf
+      - /etc/redis/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
