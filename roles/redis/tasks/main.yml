@@ -1,9 +1,6 @@
 - name: Install redis
   ansible.builtin.dnf:
-    name: 
-      - https://rpms.remirepo.net/enterprise/remi-release-8.rp
-      - redis:remi-6.2 
-      - redis
+    name: https://rpms.remirepo.net/enterprise/remi-release-8.rp
     state: present
 
 - name: update the lisiting address
