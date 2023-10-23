@@ -18,6 +18,12 @@
     repo: https://github.com/roboshop-Project/frontend.git
     dest: /usr/share/nginx/html
 
+- name: Copy the nginx conf file
+  ansible.builtin.template:
+     src: roboshop.conf
+     dest: /etc/nginx/default.d/roboshop.conf
+
+
 - name: Enabling and restarting nginx service
   ansible.builtin.systemd:
     name: nginx
