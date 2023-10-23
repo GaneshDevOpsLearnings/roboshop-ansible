@@ -15,7 +15,7 @@
     replace: '0.0.0.0'
 
 - name: enable and restarting redis
-  ansible.built.systemd:
+  ansible.builtin.systemd:
     name: redis
     state: restarted
     enabled: true
