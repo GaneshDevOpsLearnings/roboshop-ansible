@@ -1,11 +1,15 @@
-- name: Install redis
-  ansible.builtin.dnf: 
-    name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+- name: Download Remi Repository RPM
+  get_url:
+    url: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+    dest: /tmp/remi-release-8.rpm
+
+- name: Install Remi Repository RPM
+  dnf:
+    name: /tmp/remi-release-8.rpm
     state: present
-    disable_gpg_check: true
 
 - name: Enable Redis Module
-  ansible.builtin.dnf:
+  dnf:
     name: redis:remi-6.2
     state: enabled
     update_cache: yes
