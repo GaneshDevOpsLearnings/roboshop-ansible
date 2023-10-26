@@ -1,0 +1,26 @@
+- name: configuring repos by running the scripts
+  ansible.builtin.shell: "{{item}}"
+  loop:
+   - curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
+   - curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
+
+- name: Install redis server
+  ansible.builtin.dnf:
+    name: rabbitmq-server
+    state: present
+
+- name: restart and enable redis server
+  ansible.builtin.systemd:
+    name: rabbitmq-server
+    state: restarted
+    enabled: true
+
+- name: Add user and password
+  community.rabbitmq.rabbitmq_user:
+    user: roboshop
+    password: "{{rabbitmq_password}}"
+    vhost: /
+    configure_priv: .*
+    read_priv: .*
+    write_priv: .*
+    state: present
