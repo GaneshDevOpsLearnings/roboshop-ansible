@@ -1,0 +1,21 @@
+- name: installing nodejs version 18
+  ansible.builtin.dnf:
+    name: "{{item}}"
+    state: present
+  loop:
+    - https://rpm.nodesource.com/pub_18.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm
+    - nodejs
+
+- name: including the app pre req
+  ansible.builtin.include_tasks: app_prereq.yml
+
+- name: Install npm package
+  community.general.npm:
+    path: /app
+
+- name: including systemd
+  ansible.builtin.include_tasks: systemd.yml
+
+- name: Load schema
+  ansible.builtin.include_tasks: "{{schema_type}}-schema.yml"
+  when: schema_load

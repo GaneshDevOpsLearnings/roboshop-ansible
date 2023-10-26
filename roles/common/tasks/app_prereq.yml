@@ -1,0 +1,19 @@
+- name: Add Application User
+  ansible.builtin.user:
+    name: roboshop
+
+- name: Remove old app content
+  ansible.builtin.file:
+    path: /app
+    state: absent
+
+- name: Create new directory
+  ansible.builtin.file:
+    path: /app
+    state: present
+
+- name: Getting the code from git
+  ansible.builtin.git:
+    repo: https://github.com/roboshop-Project/{{component}}.git
+    dest: /app
+
