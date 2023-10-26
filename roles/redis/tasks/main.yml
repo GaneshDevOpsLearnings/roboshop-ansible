@@ -5,7 +5,6 @@
     disable_gpg_check: true
   loop:
    - https://rpms.remirepo.net/enterprise/remi-release-8.rpm
-   - redis:remi-6.2
    - redis 
 
 - name: update the lisiting address
