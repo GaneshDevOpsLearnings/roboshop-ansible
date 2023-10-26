@@ -1,11 +1,19 @@
 - name: Install redis
   ansible.builtin.dnf: 
-    name: "{{item}}"
-    state: latest
+    name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+    state: present
     disable_gpg_check: true
-  loop:
-   - https://rpms.remirepo.net/enterprise/remi-release-8.rpm
-   - redis 
+
+- name: Enable Redis Module
+  ansible.builtin.dnf:
+    name: redis:remi-6.2
+    state: enabled
+    update_cache: yes
+
+- name: Install Redis
+  ansible.builtin.dnf:
+    name: redis
+    state: present
 
 - name: update the lisiting address
   ansible.builtin.replace:
