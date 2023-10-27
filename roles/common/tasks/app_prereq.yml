@@ -10,7 +10,7 @@
 - name: Create new directory
   ansible.builtin.file:
     path: /app
-    state: present
+    state: directory
 
 - name: Getting the code from git
   ansible.builtin.git:
