@@ -2,6 +2,7 @@
   ansible.builtin.dnf:
     name: "{{item}}"
     state: present
+    disable_gpg_check: yes
   loop:
     - https://rpm.nodesource.com/pub_18.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm
     - nodejs
