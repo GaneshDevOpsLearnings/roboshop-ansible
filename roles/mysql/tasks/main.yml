@@ -3,7 +3,7 @@
 
 - name: copying the Mysql repo file
   ansible.builtin.template:
-    src: mongodb.repo
+    src: mysql.repo
     dest: /etc/yum.repos.d/mysql.repo
 
 - name: installing the mysql server
