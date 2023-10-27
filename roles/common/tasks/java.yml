@@ -7,7 +7,7 @@
   ansible.builtin.include_tasks: app_prereq.yml
 
 - name: Install the dependensices
-  ansible.builtin.shell: mvn clean package ; mv target/shipping-1.0.jar shipping.jar 
+  ansible.builtin.shell: mvn clean package ; mv /app/target/shipping-1.0.jar /app/shipping.jar 
 
 - name: including systemd
   ansible.builtin.include_tasks: systemd.yml
