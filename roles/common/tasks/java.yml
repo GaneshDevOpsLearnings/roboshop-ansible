@@ -1,0 +1,17 @@
+- name: install maven module
+  ansible.builtin.dnf:
+    name: maven
+    state: present
+
+- name: including the app pre req
+  ansible.builtin.include_tasks: app_prereq.yml
+
+- name: Install the dependensices
+  ansible.builtin.shell: mvn clean package ; mv target/shipping-1.0.jar shipping.jar 
+
+- name: including systemd
+  ansible.builtin.include_tasks: systemd.yml
+
+- name: Load schema
+  ansible.builtin.include_tasks: "{{schema_type}}-schema.yml"
+  when: schema_load

@@ -1,0 +1,13 @@
+- name: installing sql client
+  ansible.builtin.dnf:
+    name: mysql
+    state: present
+  
+- name: Load MySQL Schema
+  community.mysql.mysql_db:
+    state: import
+    name: all
+    target: /app/schema/{{component}}.sql
+    login_host: mysql ip
+    login_user: root
+    login_password: "{{my_sql_password}}"
