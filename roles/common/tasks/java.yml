@@ -8,6 +8,8 @@
 
 - name: Install the dependensices
   ansible.builtin.shell: mvn clean package ; mv /app/target/shipping-1.0.jar /app/shipping.jar 
+  args:
+    chdir: /app
 
 - name: including systemd
   ansible.builtin.include_tasks: systemd.yml
