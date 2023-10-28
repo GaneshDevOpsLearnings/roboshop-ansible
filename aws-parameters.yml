@@ -1,5 +1,6 @@
 - name: Create or update key/value pair in AWS SSM parameter store
-  community.aws.ssm_parameter:
-    name: "Hello"
-    description: "This is your first key"
-    value: "World"
+  tasks:
+    community.aws.ssm_parameter:
+      name: "Hello"
+      description: "This is your first key"
+      value: "World"
