@@ -1,6 +1,7 @@
 - name: Create Parameters
   hosts: localhost
   connection: local
+  become: yes
   tasks:
     - name: Create Parameters
       community.aws.aws_ssm_parameter_store:
