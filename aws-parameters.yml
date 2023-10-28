@@ -8,8 +8,8 @@
         value: "{{ item.value }}"
         region: us-east-1
       loop:
-        - {name: "dev.frontend.catalogue" , value: ""}
-        - {name: "dev.frontend.user" , value: ""}
-        - {name: "dev.frontend.cart" , value: ""}
-        - {name: "dev.frontend.shipping" , value: ""}
-        - {name: "dev.frontend.payment" , value: ""}
+        - {name: "dev.frontend.catalogue" , value: "1"}
+        - {name: "dev.frontend.user" , value: "1"}
+        - {name: "dev.frontend.cart" , value: "1"}
+        - {name: "dev.frontend.shipping" , value: "1"}
+        - {name: "dev.frontend.payment" , value: "1"}
