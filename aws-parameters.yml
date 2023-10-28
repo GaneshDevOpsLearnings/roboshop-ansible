@@ -1,8 +1,9 @@
-- name: Create or update key/value pair in AWS SSM parameter store
-  hosts: all
-  become: yes
+- name: Create Parameters
+  hosts: localhost
+  connection: local
   tasks:
-    community.aws.aws_ssm_parameter_store:
-      name: "Hello"
-      description: "This is your first key"
-      value: "World"
+    - name: Create Parameters
+      community.aws.aws_ssm_parameter_store:
+        name: "hello"
+        value: "world"
+        region: us-east-1
