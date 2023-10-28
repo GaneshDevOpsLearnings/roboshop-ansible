@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   tasks:
-    community.aws.ssm_parameter:
+    community.aws.aws_ssm_parameter_store:
       name: "Hello"
       description: "This is your first key"
       value: "World"
