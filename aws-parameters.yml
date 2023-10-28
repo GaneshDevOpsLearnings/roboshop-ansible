@@ -4,6 +4,12 @@
   tasks:
     - name: Create Parameters
       community.aws.aws_ssm_parameter_store:
-        name: "hello"
-        value: "world"
+        name: "{{ item.name }}"
+        value: "{{ item.value }}"
         region: us-east-1
+      loop:
+        - {name: "dev.frontend.catalogue" , value: ""}
+        - {name: "dev.frontend.user" , value: ""}
+        - {name: "dev.frontend.cart" , value: ""}
+        - {name: "dev.frontend.shipping" , value: ""}
+        - {name: "dev.frontend.payment" , value: ""}
