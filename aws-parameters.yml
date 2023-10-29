@@ -8,16 +8,16 @@
         value: "{{ item.value }}"
         region: us-east-1
       loop:
-        - {name: "dev.catalogue" , value: "172.31.45.128"}
-        - {name: "dev.user" , value: "172.31.35.147"}
-        - {name: "dev.cart" , value: "172.31.35.147"}
-        - {name: "dev.shipping" , value: "172.31.35.147"}
-        - {name: "dev.payment" , value: "172.31.35.147"}
-        #databases
-        - {name: "dev.mongodb" , value: "172.31.38.167"}
-        - {name: "dev.mysql" , value: ""}
-        - {name: "dev.redis" , value: ""}
-        - {name: "dev.rebbitmq" , value: ""}
+        - {name: "dev.catalogue" , value: "172.31.35.52"}
+        - {name: "dev.user" , value: "172.31.36.84"}
+        - {name: "dev.cart" , value: "172.31.37.149"}
+        - {name: "dev.shipping" , value: "172.31.42.171"}
+        - {name: "dev.payment" , value: "172.31.47.110"}
+        #databasess
+        - {name: "dev.mongodb" , value: "172.31.36.128"}
+        - {name: "dev.mysql" , value: "172.31.46.80"}
+        - {name: "dev.redis" , value: "172.31.35.193"}
+        - {name: "dev.rebbitmq" , value: "172.31.46.84"}
 
         #passwords
         - {name: "dev.rabbitmq.pass" , value: "roboshop123"}
