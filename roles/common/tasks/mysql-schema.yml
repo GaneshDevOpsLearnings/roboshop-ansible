@@ -10,4 +10,4 @@
     target: /app/schema/{{component}}.sql
     login_host: mysql ip
     login_user: root
-    login_password: "{{my_sql_password}}"
+    login_password: "{{ lookup('aws_ssm', 'dev.mysql.pass', region='us-east-1') }}"

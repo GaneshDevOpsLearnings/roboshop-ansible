@@ -18,7 +18,7 @@
 - name: Add user and password
   community.rabbitmq.rabbitmq_user:
     user: roboshop
-    password: "{{rabbitmq_password}}"
+    password: "{{ lookup('aws_ssm', 'dev.rabbitmq.pass', region='us-east-1') }}"
     vhost: /
     configure_priv: .*
     read_priv: .*

@@ -8,9 +8,17 @@
         value: "{{ item.value }}"
         region: us-east-1
       loop:
-        - {name: "dev.frontend.catalogue" , value: "172.31.45.128"}
-        - {name: "dev.frontend.user" , value: "172.31.35.147"}
-        - {name: "dev.frontend.cart" , value: "172.31.35.147"}
-        - {name: "dev.frontend.shipping" , value: "172.31.35.147"}
-        - {name: "dev.frontend.payment" , value: "172.31.35.147"}
+        - {name: "dev.catalogue" , value: "172.31.45.128"}
+        - {name: "dev.user" , value: "172.31.35.147"}
+        - {name: "dev.cart" , value: "172.31.35.147"}
+        - {name: "dev.shipping" , value: "172.31.35.147"}
+        - {name: "dev.payment" , value: "172.31.35.147"}
+        #databases
         - {name: "dev.mongodb" , value: "172.31.38.167"}
+        - {name: "dev.mysql" , value: ""}
+        - {name: "dev.redis" , value: ""}
+        - {name: "dev.rebbitmq" , value: ""}
+
+        #passwords
+        - {name: "dev.rabbitmq.pass" , value: "roboshop123"}
+        - {name: "dev.mysql.pass" , value: "RoboShop@1"}
