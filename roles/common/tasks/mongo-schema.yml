@@ -10,6 +10,6 @@
 
 - name: loading the mongo schema
   community.mongodb.mongodb_shell:
-    login_host: Mongodb-ip
+    login_host: {{ lookup('aws_ssm', 'dev.mongodb', region='us-east-1') }}
     file: /app/schema/{{component}}.js
     idempotent: yes
