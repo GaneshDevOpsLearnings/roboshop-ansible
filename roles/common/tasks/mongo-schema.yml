@@ -9,7 +9,4 @@
     state: present
 
 - name: loading the mongo schema
-  community.mongodb.mongodb_shell:
-    login_host: "{{ lookup('aws_ssm', 'dev.mongodb', region='us-east-1') }}"
-    file: /app/schema/{{component}}.js
-    idempotent: yes
+  ansible.builtin.shell: mongo --host {{ lookup('aws_ssm', 'dev.mongodb', region='us-east-1') }} </app/schema/user.js
