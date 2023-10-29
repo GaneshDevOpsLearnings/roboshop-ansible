@@ -1,14 +1,8 @@
-- name: python for mysql
-  ansible.builtin.dnf:
-    name: "{{item}}"  
-    state: present
-  loop:
-    - python3.11-devel
-    - python3.11-pip
-    
 - name: installing sql client
   ansible.builtin.dnf:
-    name: mysql
+    name: 
+     - python3-PyMySQL
+     - mysql
     state: present
 
   
